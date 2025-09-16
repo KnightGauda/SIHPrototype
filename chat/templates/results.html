@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style>
+  /* Make charts/maps responsive and take full width */
+  #plotly-div, #mapid {
+    width: 100% !important;
+    height: 80vh !important;  /* Fill most of the viewport */
+  }
+  .full-width {
+    width: 100% !important;
+    margin: 0;
+    padding: 0;
+  }
+  .results-grid {
+    display: block; /* Override grid layout for full-width views */
+  }
+</style>
+
+{% if comparison_only %}
+  <div class="full-width">
+    <h2>Query</h2>
+    <p>{{ query }}</p>
+    <h3>Summary</h3>
+    <p>{{ summary }}</p>
+    <h3>Comparison</h3>
+    <div id="plotly-div">{{ plot_html|safe }}</div>
+  </div>
+
+{% elif map_only %}
+  <div class="full-width">
+    <h2>Query</h2>
+    <p>{{ query }}</p>
+    <h3>Summary</h3>
+    <p>{{ summary }}</p>
+    <h3>Map</h3>
+    <div id="mapid">{{ map_html|safe }}</div>
+  </div>
+
+{% else %}
+  <div class="results-grid">
+    <div class="left">
+      <h2>Query</h2>
+      <p>{{ query }}</p>
+      <h3>Summary</h3>
+      <p>{{ summary }}</p>
+      <h3>Trend</h3>
+      <div id="plotly-div">{{ plot_html|safe }}</div>
+    </div>
+    <div class="right">
+      <h3>Map</h3>
+      <div id="mapid">{{ map_html|safe }}</div>
+    </div>
+  </div>
+{% endif %}
+
+<p><a href="{% url 'chat' %}">Ask another question</a></p>
+
+{% endblock %}

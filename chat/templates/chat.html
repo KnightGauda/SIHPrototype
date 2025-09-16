@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="chat-wrapper">
+    <form method="post" class="query-form">
+      {% csrf_token %}
+      <input name="query" placeholder="e.g. What is the ocean salinity near India in the last 6 months?" required>
+      <button type="submit">Ask</button>
+    </form>
+    <div class="recent">
+      <h3>Quick examples</h3>
+      <ul>
+        <li>Show me sea temperature trends in the Pacific Ocean (last 5 years)</li>
+        <li>What is the ocean salinity near India in the last 6 months?</li>
+        <li>Plot temperature near the Arabian Sea (2019-2024)</li>
+      </ul>
+    </div>
+  </div>
+{% endblock %}

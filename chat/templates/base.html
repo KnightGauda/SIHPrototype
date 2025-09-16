@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Ocean Insights - Prototype</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Ocean Insights (Demo)</h1>
+      <p>Ask questions like: <em>Show me sea temperature trends in the Pacific Ocean (last 5 years)</em></p>
+    </header>
+    <main>
+      {% block content %}{% endblock %}
+    </main>
+    <footer>
+      <small>Prototype demo — uses ARGO sample data & simple NL parsing.</small>
+    </footer>
+  </div>
+</body>
+</html>

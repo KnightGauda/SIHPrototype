@@ -1,0 +1,11 @@
+body { font-family: Arial, Helvetica, sans-serif; margin: 0; padding: 0; background: #f6f9fc; color: #1b2b3a; }
+.container { max-width: 1100px; margin: 24px auto; padding: 16px; background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.06); border-radius: 8px; }
+header h1 { margin: 0 0 6px; font-size: 20px; }
+.chat-wrapper { display:flex; gap: 18px; align-items:flex-start; }
+.query-form { flex: 1; display:flex; gap: 8px; }
+.query-form input { flex: 1; padding: 10px; border-radius: 6px; border:1px solid #ddd; }
+.query-form button { padding: 10px 14px; border: none; background: #1976d2; color: white; border-radius: 6px; cursor: pointer; }
+.recent { width: 340px; background: #fbfdff; padding: 12px; border-radius: 6px; border: 1px solid #eef4fb; }
+.results-grid { display:grid; grid-template-columns: 1fr 420px; gap: 16px; }
+.left, .right { background: #fcfeff; padding: 12px; border-radius: 6px; border: 1px solid #eef4fb; }
+footer { margin-top: 14px; color: #6b7280; font-size: 13px; }
