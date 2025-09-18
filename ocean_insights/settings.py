@@ -8,10 +8,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "dev-secret-key")
 DEBUG=0
 
-ALLOWED_HOSTS = ["sihprototype.onrender.com"]
+ALLOWED_HOSTS = ["floatchat-sih2025.onrender.com"]
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://sihprototype.onrender.com",
+    "https://floatchat-sih2025.onrender.com",
 ]
 
 
