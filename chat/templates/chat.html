@@ -1,17 +1,97 @@
 {% extends "base.html" %}
 {% block content %}
+  <style>
+    .chat-wrapper {
+      max-width: 700px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .query-form {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 1.5rem;
+    }
+
+    .query-form input {
+      flex: 1;
+      padding: 12px 15px;
+      border-radius: 12px;
+      border: 1px solid #ddd;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    }
+
+    .query-form input:focus {
+      border-color: #0077b6;
+      box-shadow: 0 0 6px rgba(0, 119, 182, 0.4);
+    }
+
+    .query-form button {
+      background: #0077b6;
+      color: #fff;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 12px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s ease-in-out;
+    }
+
+    .query-form button:hover {
+      background: #005f8a;
+    }
+
+    .recent {
+      margin-top: 2rem;
+    }
+
+    .recent h3 {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    .recent ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .recent li {
+      background: #f1f5f9;
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: background 0.2s ease-in-out, transform 0.15s ease-in-out;
+    }
+
+    .recent li:hover {
+      background: #e2e8f0;
+      transform: translateY(-2px);
+    }
+  </style>
+
   <div class="chat-wrapper">
     <form method="post" class="query-form">
       {% csrf_token %}
-      <input name="query" placeholder="e.g. What is the ocean salinity near India in the last 6 months?" required>
+      <input name="query" placeholder="Ask about ocean data..." required>
       <button type="submit">Ask</button>
     </form>
     <div class="recent">
-      <h3>Quick examples</h3>
+      <h3>Quick Examples</h3>
       <ul>
         <li>Show me sea temperature trends in the Pacific Ocean (last 5 years)</li>
         <li>What is the ocean salinity near India in the last 6 months?</li>
-        <li>Plot temperature near the Arabian Sea (2019-2024)</li>
+        <li>Plot temperature near the Arabian Sea (2019–2024)</li>
       </ul>
     </div>
   </div>
