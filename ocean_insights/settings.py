@@ -6,8 +6,14 @@ load_dotenv()
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "dev-secret-key")
-DEBUG = os.getenv("DEBUG", "1") == "1"
-ALLOWED_HOSTS = ["*"]
+DEBUG=0
+
+ALLOWED_HOSTS = ["sihprototype.onrender.com"]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://sihprototype.onrender.com",
+]
+
 
 INSTALLED_APPS = [
     "django.contrib.admin",
